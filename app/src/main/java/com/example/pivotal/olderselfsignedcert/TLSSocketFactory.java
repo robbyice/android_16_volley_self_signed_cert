@@ -17,7 +17,7 @@ public class TLSSocketFactory extends SSLSocketFactory {
     private SSLSocketFactory internalSSLSocketFactory;
 
     public TLSSocketFactory(TrustManager[] trustManagers) throws KeyManagementException, NoSuchAlgorithmException {
-        SSLContext context = SSLContext.getInstance("TLS");
+        SSLContext context = SSLContext.getInstance("TLSv1.2");
         context.init(null, trustManagers, null);
         internalSSLSocketFactory = context.getSocketFactory();
     }
